@@ -1,0 +1,18 @@
+[
+  {"company":"ABB","metric":"scope_1","page":36,"value":"119","unit":"kt CO2e","text":"Gross Scope 1 GHG emissions. Total Scope 1 emissions (assured): 119 kt CO2e in 2024."},
+  {"company":"ABB","metric":"scope_2","page":36,"value":"19 / 286","expected_values":["market-based 19 kt CO2e","location-based 286 kt CO2e"],"unit":"kt CO2e","text":"Total Scope 2 GHG emissions in 2024: market-based 19 kt CO2e; location-based 286 kt CO2e."},
+  {"company":"ABB","metric":"scope_3","page":36,"value":"394,952","unit":"kt CO2e","text":"Total Scope 3 GHG emissions (assured): 394,952 kt CO2e in 2024."},
+  {"company":"ABB","metric":"energy","page":35,"value":"1,292","unit":"GWh","text":"Total energy consumption (assured): 1,292 GWh in 2024."},
+  {"company":"ABB","metric":"renewable_electricity","page":34,"value":"95%","unit":"%","text":"RE100 status: renewable electricity consumption was 95% of total electricity consumption in 2024."},
+  {"company":"ABB","metric":"water","page":46,"value":"283,123","unit":"m3","text":"Water consumption in areas at water risk, including high water stress: 283,123 m3 in 2024."},
+  {"company":"ABB","metric":"waste","page":43,"value":"177,465","unit":"metric tons","text":"Total amount of waste generated: 177,465 metric tons in 2024."},
+  {"company":"ABB","metric":"methodology","page":36,"value":"Group reporting standards","unit":"","text":"ABB reports market- and location-based Scope 2 totals. Its GHG inventory consolidation follows the Group reporting standards and relevant Scope 3 categories."},
+  {"company":"Siemens","metric":"scope_1","page":120,"value":"347","unit":"kt CO2e","text":"Scope 1 total: 347 in 1,000 metric tons of CO2e for fiscal 2024."},
+  {"company":"Siemens","metric":"scope_2","page":120,"value":"94 / 667","expected_values":["market based 94","location based 667"],"unit":"kt CO2e","text":"Scope 2 total for fiscal 2024: market based 94 and location based 667 in 1,000 metric tons of CO2e."},
+  {"company":"Siemens","metric":"scope_3","page":121,"value":"416,758","unit":"kt CO2e","text":"Scope 3 total: 416,758 in 1,000 metric tons of CO2e for fiscal 2024."},
+  {"company":"Siemens","metric":"energy","page":122,"value":"9,012","unit":"thousand GJ","text":"Energy consumption, primary and secondary energy total: 9,012 thousand GJ in fiscal 2024."},
+  {"company":"Siemens","metric":"renewable_electricity","page":123,"value":"4,562 / 80%","unit":"thousand GJ / %","text":"Electricity from renewable sources: 4,562 thousand GJ, representing 80% of total electricity used in fiscal 2024."},
+  {"company":"Siemens","metric":"water","page":124,"value":"0.67","unit":"million m3","text":"Water consumption total: 0.67 million cubic meters in fiscal 2024."},
+  {"company":"Siemens","metric":"waste","page":123,"value":"345.5","unit":"thousand tons","text":"Waste total: 345.5 thousand tons in fiscal 2024, including construction waste."},
+  {"company":"Siemens","metric":"methodology","page":67,"value":"GHG Protocol","unit":"","text":"Siemens reports under the GHG Protocol corporate standard for all sites. Scope 3 includes relevant upstream and downstream categories; Scope 3.11 uses the energy input approach."}
+]

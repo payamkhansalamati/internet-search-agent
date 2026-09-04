@@ -1,0 +1,186 @@
+schema_version: 1
+glossary_version: 1.0.0
+concepts:
+  - id: scope_1_emissions
+    canonical_name: Scope 1 emissions
+    definition: Direct greenhouse-gas emissions from sources owned or controlled by the reporting organization.
+    aliases: [Scope 1, direct emissions]
+    abbreviations: [S1]
+    related_concepts: [organizational_boundary, greenhouse_gas_protocol]
+    non_equivalent_terms: [Scope 2 emissions, Scope 3 emissions]
+    expected_units: [kt_co2e, t_co2e]
+    qualifiers: [organizational_boundary, fiscal_year, methodology]
+    query_expansion: [Sustainability Key Performance Indicators, total Scope 1 emissions]
+    value_patterns: ['(?:total\s+)?scope\s*1\b(?!\s*\+).{0,160}\d']
+    provenance: &migration
+      source_document: legacy production vocabulary migration
+      company: null
+      report_year: null
+      pdf_page: null
+      printed_page: null
+      supporting_text: Migrated from the reviewed retrieval and unit-normalization rules.
+      extracted_at: '2026-08-31T00:00:00Z'
+      confidence: 1.0
+      approval_status: approved
+      approved_by: repository migration
+  - id: scope_2_emissions
+    canonical_name: Scope 2 emissions
+    definition: Indirect greenhouse-gas emissions associated with purchased or acquired energy.
+    aliases: [Scope 2, indirect energy emissions]
+    abbreviations: [S2]
+    related_concepts: [scope_2_market_based, scope_2_location_based, greenhouse_gas_protocol]
+    non_equivalent_terms: [Scope 1 emissions, Scope 3 emissions]
+    expected_units: [kt_co2e, t_co2e]
+    qualifiers: [organizational_boundary, fiscal_year, methodology, scope_2_basis]
+    query_expansion: [Sustainability Key Performance Indicators, Scope 2 market based location based emissions]
+    value_patterns: ['scope\s*2\b.{0,500}(?:market[ -]based|location[ -]based).{0,160}\d']
+    provenance: *migration
+  - id: scope_2_market_based
+    canonical_name: Scope 2 market-based emissions
+    definition: Scope 2 emissions reflecting contractual instruments and supplier-specific emission factors where applicable.
+    aliases: [market-based Scope 2, Scope 2 market based]
+    abbreviations: []
+    related_concepts: [scope_2_emissions]
+    non_equivalent_terms: [Scope 2 location-based emissions]
+    expected_units: [kt_co2e, t_co2e]
+    qualifiers: [fiscal_year, methodology, scope_2_basis]
+    query_expansion: [market-based]
+    value_patterns: ['market[ -]based.{0,160}\d']
+    provenance: *migration
+  - id: scope_2_location_based
+    canonical_name: Scope 2 location-based emissions
+    definition: Scope 2 emissions calculated using average grid emission factors for the locations where energy is consumed.
+    aliases: [location-based Scope 2, Scope 2 location based]
+    abbreviations: []
+    related_concepts: [scope_2_emissions]
+    non_equivalent_terms: [Scope 2 market-based emissions]
+    expected_units: [kt_co2e, t_co2e]
+    qualifiers: [fiscal_year, methodology, scope_2_basis]
+    query_expansion: [location-based]
+    value_patterns: ['location[ -]based.{0,160}\d']
+    provenance: *migration
+  - id: scope_3_emissions
+    canonical_name: Scope 3 emissions
+    definition: Other indirect greenhouse-gas emissions across the reporting organization's value chain.
+    aliases: [Scope 3, value chain emissions]
+    abbreviations: [S3]
+    related_concepts: [greenhouse_gas_protocol, organizational_boundary]
+    non_equivalent_terms: [Scope 1 emissions, Scope 2 emissions]
+    expected_units: [kt_co2e, t_co2e]
+    qualifiers: [organizational_boundary, fiscal_year, methodology]
+    query_expansion: [Sustainability Key Performance Indicators, total Scope 3 greenhouse gas emissions]
+    value_patterns: ['total\s+scope\s*3\b.{0,160}\d']
+    provenance: *migration
+  - id: energy_consumption
+    canonical_name: Energy consumption
+    definition: Energy consumed within the stated reporting boundary and period.
+    aliases: [total energy consumption, energy use]
+    abbreviations: []
+    related_concepts: [renewable_electricity, organizational_boundary]
+    non_equivalent_terms: [electricity consumption]
+    expected_units: [gj, thousand_gj, gwh, mwh]
+    qualifiers: [organizational_boundary, fiscal_year, methodology]
+    query_expansion: [Sustainability Key Performance Indicators, total energy consumption, gigajoule, GWh]
+    value_patterns: ['(?:total\s+energy\s+consumption|energy\s+consumption.{0,80}total).{0,160}\d']
+    provenance: *migration
+  - id: renewable_electricity
+    canonical_name: Renewable electricity
+    definition: Electricity from renewable sources within the stated reporting scope.
+    aliases: [renewable electricity consumption, electricity from renewable sources]
+    abbreviations: []
+    related_concepts: [energy_consumption]
+    non_equivalent_terms: [renewable energy]
+    expected_units: [percent, gwh, mwh]
+    qualifiers: [organizational_boundary, fiscal_year, methodology]
+    query_expansion: [Sustainability Key Performance Indicators, renewable electricity consumption, percentage]
+    value_patterns: ['renewable\s+electricity.{0,200}\d']
+    provenance: *migration
+  - id: water_consumption
+    canonical_name: Water consumption
+    definition: Water withdrawn and not returned to the same catchment during the reporting period, as defined by the report.
+    aliases: [water consumed]
+    abbreviations: []
+    related_concepts: [organizational_boundary]
+    non_equivalent_terms: [water withdrawal, water discharge]
+    expected_units: [m3, million_m3]
+    qualifiers: [organizational_boundary, fiscal_year, methodology]
+    query_expansion: [Sustainability Key Performance Indicators, water consumption, cubic meter]
+    value_patterns: ['water\s+consumption.{0,160}\d']
+    provenance: *migration
+  - id: waste
+    canonical_name: Waste generated
+    definition: Waste generated within the stated reporting boundary and period.
+    aliases: [total waste, total amount of waste, waste generation]
+    abbreviations: []
+    related_concepts: [organizational_boundary]
+    non_equivalent_terms: [waste recycled, waste disposed]
+    expected_units: [metric_tons, thousand_tons]
+    qualifiers: [organizational_boundary, fiscal_year, methodology]
+    query_expansion: [Sustainability Key Performance Indicators, waste total generated, metric tons, construction waste]
+    value_patterns: ['(?:total\s+(?:amount\s+of\s+)?waste|waste.{0,80}total).{0,160}\d']
+    provenance: *migration
+  - id: organizational_boundary
+    canonical_name: Organizational boundary
+    definition: The entities, operations, sites, and consolidation approach included in reported data.
+    aliases: [reporting boundary, consolidation boundary]
+    abbreviations: []
+    related_concepts: [methodology, fiscal_year]
+    non_equivalent_terms: []
+    expected_units: []
+    qualifiers: []
+    query_expansion: [reporting boundary, consolidation]
+    value_patterns: []
+    provenance: *migration
+  - id: methodology
+    canonical_name: Methodology
+    definition: The stated standards, calculation methods, assumptions, and estimation approaches used for a reported KPI.
+    aliases: [calculation methodology, calculation method]
+    abbreviations: []
+    related_concepts: [organizational_boundary, greenhouse_gas_protocol]
+    non_equivalent_terms: []
+    expected_units: []
+    qualifiers: []
+    query_expansion: [methodology, calculation]
+    value_patterns: []
+    provenance: *migration
+  - id: fiscal_year
+    canonical_name: Fiscal year
+    definition: The reporting period to which a KPI value applies.
+    aliases: [reporting year, financial year]
+    abbreviations: [FY]
+    related_concepts: [organizational_boundary]
+    non_equivalent_terms: [calendar year]
+    expected_units: []
+    qualifiers: []
+    query_expansion: [fiscal year, reporting year]
+    value_patterns: []
+    provenance: *migration
+  - id: greenhouse_gas_protocol
+    canonical_name: Greenhouse Gas Protocol
+    definition: A family of greenhouse-gas accounting standards referenced by reporting organizations.
+    aliases: [GHG Protocol]
+    abbreviations: [GHGP]
+    related_concepts: [methodology]
+    non_equivalent_terms: []
+    expected_units: []
+    qualifiers: []
+    query_expansion: [GHG Protocol]
+    value_patterns: []
+    provenance: *migration
+units:
+  - {id: kt_co2e, canonical: 'kt CO2e', aliases: ['kt CO2e', '1,000 metric tons of CO2e'], pattern: '\b(?:kt\s*CO[₂2]e|1,000\s+metric\s+tons?\s+of\s+CO[₂2]e)', broader_unit: t_co2e, provenance: *migration}
+  - {id: t_co2e, canonical: tCO2e, aliases: [tCO2e, 'metric tons of CO2e'], pattern: '\b(?:tCO[₂2]e|metric\s+tons?\s+of\s+CO[₂2]e)', broader_unit: metric_tons, provenance: *migration}
+  - {id: thousand_gj, canonical: 'thousand GJ', aliases: ['1,000 gigajoules', 'thousand gigajoules'], pattern: '\b(?:1,000\s+gigajoules?|thousand\s+gigajoules?)\b', broader_unit: gj, provenance: *migration}
+  - {id: million_m3, canonical: 'million m3', aliases: ['million cubic meters', 'million m³'], pattern: '\bmillion\s+(?:cubic\s+meters?|m\s*[³3])\b', broader_unit: m3, provenance: *migration}
+  - {id: gwh, canonical: GWh, aliases: [GWh], pattern: '\bGWh\b', broader_unit: null, provenance: *migration}
+  - {id: mwh, canonical: MWh, aliases: [MWh], pattern: '\bMWh\b', broader_unit: null, provenance: *migration}
+  - {id: gj, canonical: GJ, aliases: [GJ, gigajoule, gigajoules], pattern: '\bGJ\b|\bgigajoules?\b', broader_unit: null, provenance: *migration}
+  - {id: m3, canonical: m3, aliases: [m3, m³, cubic meter, cubic meters], pattern: '\bm\s*[³3]\b|\bcubic\s+meters?\b', broader_unit: null, provenance: *migration}
+  - {id: metric_tons, canonical: 'metric tons', aliases: ['metric ton', 'metric tons', ton, tons, kiloton, kilotons], pattern: '\b(?:metric\s+)?(?:kilo)?tons?\b', broader_unit: null, provenance: *migration}
+  - {id: thousand_tons, canonical: 'thousand tons', aliases: ['thousand tons', '1,000 tons'], pattern: '\b(?:thousand|1,000)\s+(?:metric\s+)?tons?\b', broader_unit: metric_tons, suppressed_by: [kt_co2e], provenance: *migration}
+  - {id: percent, canonical: '%', aliases: ['%', percent, percentage], pattern: '%|\bpercent(?:age)?\b', broader_unit: null, provenance: *migration}
+qualifiers:
+  - {id: organizational_boundary, definition: Entities and operations included in the reported value., provenance: *migration}
+  - {id: methodology, definition: Standard, calculation, estimation, or assumption applied., provenance: *migration}
+  - {id: fiscal_year, definition: Period to which the value applies., provenance: *migration}
+  - {id: scope_2_basis, definition: Whether Scope 2 is market-based or location-based., provenance: *migration}

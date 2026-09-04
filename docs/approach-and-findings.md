@@ -1,0 +1,9 @@
+# Approach and findings
+
+Official-report evidence is preferred over general web snippets. Company aliases and domain allowlists are data, not graph branches. GE Vernova carries an explicit warning because historical General Electric group disclosures are not silently comparable to the current reporting entity.
+
+PDF extraction is inherently imperfect. Page coordinates, scanned pages, merged cells, repeated headers, and multi-page tables can change meaning. Docling is configured for OCR and accurate table structure and retains headings, captions, Markdown, provenance pages, and available extraction confidence. Table evidence remains page-local to preserve citation accuracy. Extracted values still need their page and section context; the PyPDF fallback preserves pages but cannot reconstruct layout or tables.
+
+Comparisons require aligned year, unit, organizational boundary, reporting entity, and methodology. The service emits warnings when years or companies differ; model synthesis is instructed to expose insufficiency. Citation validation checks inline markers, but it does not yet perform claim-level entailment. DuckDuckGo has no availability or completeness SLA and results must pass source validation before document ingestion.
+
+OpenAI offers a managed default; Ollama keeps prompts local but requires sufficient hardware and may produce weaker citation adherence. Hugging Face embeddings provide the local semantic index and may download the configured model on first indexing. Persisted LlamaIndex storage avoids rebuilding embeddings on API requests. Exact-term ranking remains available if semantic retrieval fails. Web and PDF text never becomes instruction context. Downloads require HTTPS, approved hosts, public DNS addresses, PDF content type, bounded size, and timeouts; redirects are rejected pending validation of each hop.

@@ -1,0 +1,15 @@
+companies:
+  - {name: Siemens, aliases: ["Siemens AG"], domains: [siemens.com]}
+  - {name: ABB, aliases: ["ABB Ltd"], domains: [abb.com]}
+  - {name: Schneider Electric, aliases: [Schneider], domains: [se.com, schneider-electric.com]}
+  - name: GE Vernova
+    aliases: [Vernova]
+    domains: [gevernova.com]
+    warning: "GE Vernova is a distinct reporting entity; do not silently combine its data with historical General Electric group data."
+  - {name: Honeywell, aliases: ["Honeywell International"], domains: [honeywell.com]}
+  - {name: Rockwell Automation, aliases: [Rockwell], domains: [rockwellautomation.com]}
+  - {name: Mitsubishi Electric, aliases: ["Mitsubishi Electric Corporation"], domains: [mitsubishielectric.com]}
+  - {name: Hitachi, aliases: ["Hitachi Ltd"], domains: [hitachi.com]}
+  - {name: Bosch, aliases: ["Robert Bosch"], domains: [bosch.com]}
+  - {name: BMW Group, aliases: [BMW], domains: [bmwgroup.com]}
+

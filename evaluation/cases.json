@@ -1,0 +1,8 @@
+[
+  {"category":"conversational","question":"Hello"},
+  {"category":"indexed","question":"What emissions did ABB report in 2023?"},
+  {"category":"live-search","question":"What is the latest Siemens sustainability target?"},
+  {"category":"single-company","question":"Summarize Bosch Scope 1 emissions."},
+  {"category":"cross-company","question":"Compare BMW Group and Hitachi emissions."}
+]
+

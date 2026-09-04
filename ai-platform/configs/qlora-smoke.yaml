@@ -1,0 +1,21 @@
+name: llama-qlora-smoke
+kind: fine-tune
+cloud: aws
+region: eu-central-1
+image: ghcr.io/replace-me/ai-training:sha-pin-required
+model: meta-llama/Llama-3.1-8B-Instruct
+dataset: s3://replace-me/datasets/instruction/v1
+distribution: single
+resources:
+  nodes: 1
+  gpus_per_node: 1
+  gpu_memory_gib: 24
+  cpu_per_node: 8
+  memory_gib_per_node: 64
+use_spot: true
+checkpoint_uri: s3://replace-me/checkpoints/llama-qlora-smoke
+quality_gates:
+  - metric: grounded_answer_score
+    minimum: 0.8
+  - metric: p95_latency_ms
+    maximum: 2500
